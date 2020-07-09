@@ -10,6 +10,11 @@ var answerBtnEl = document.getElementById('answer-btns');
 
 //start the quiz
 startBtn.addEventListener('click', startQuiz);
+
+nextBtn.addEventListener('click', ()=>{
+    currentQueIndex++;
+    nextQuestion();
+})
 function startQuiz(){
 console.log("started");
 startBtn.classList.add("hide");
@@ -61,6 +66,15 @@ Array.from (answerBtnEl.children).forEach(button => {
     setStatusClass(button,button.dataset.correct);
 
 })
+//When we run out of question, the restart buttonshow (or any other action)
+if (shuffleQue.length> currentQueIndex+1){
+    nextBtn.classList.remove('hide');
+}else {
+    startBtn.innerText = 'Restart';
+    startBtn.classList.remove('hide');
+
+}
+nextBtn.classList.remove('hide')
 }
 
 
@@ -76,6 +90,7 @@ function setStatusClass(element, correct){
 function clearStatusClass(element){
     element.classList.remove('correct');
     element.classList.remove('wrong');
+}
 
 var questions =[
     {
