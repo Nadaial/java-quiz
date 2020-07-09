@@ -24,11 +24,7 @@ questionConEl.classList.remove('hide');
 nextQuestion()
 }
 
-
-
-
-
-//Toset the next question 
+//To set the next question 
 function nextQuestion(){
     resetQue();
 showQue(shuffleQue[currentQueIndex])
@@ -45,8 +41,7 @@ function showQue(question){
         }
 button.addEventListener('click', answer);
 answerBtnEl.appendChild(button);
-    }
-        )
+    })
 }
 
 function resetQue(){
@@ -54,7 +49,6 @@ function resetQue(){
     while (answerBtnEl.firstChild){
         answerBtnEl.removeChild (answerBtnEl.firstChild);
     }
-
 }
 
 //select the Answer function
