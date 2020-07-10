@@ -88,7 +88,7 @@ function clearStatusClass(element){
 
 var questions =[
     {
-        question: 'What is 1', 
+        question: 'What is Question 1?', 
         answers: [
             {text:'1', correct:true},
             {text:'2', correct:false},
@@ -97,21 +97,21 @@ var questions =[
         ]
     },
     {
-        question: 'What is 2', 
+        question: 'What is Question 2?', 
         answers: [
-            {text:'e', correct:true},
+            {text:'e', correct:false},
             {text:'u', correct:false},
-            {text:'y', correct:false},
+            {text:'y', correct:true},
             {text:'k', correct:false},
         ]
     },
     {
-        question: 'What is 3', 
+        question: 'What is Question 3?', 
         answers: [
-            {text:'3', correct:true},
+            {text:'3', correct:false},
             {text:'g', correct:false},
             {text:'j', correct:false},
-            {text:'f', correct:false},
+            {text:'f', correct:true},
         ]
     }
 ]
