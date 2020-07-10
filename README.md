@@ -19,7 +19,6 @@ Please contact me for major changes.
 
 
 ## Resources:
-
 #https://fonts.google.com/specimen/Concert+One?query=hand&selection.family=Concert+One|Handlee|Montserrat|Open+Sans&sidebar.open#glyphs
 #https://www.makeareadme.com/
 
