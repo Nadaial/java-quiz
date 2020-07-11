@@ -4,16 +4,22 @@ var questionConEl=document.getElementById('question-con');
 var shuffleQue, currentQueIndex;
 var QueEl = document.getElementById('question');
 var answerBtnEl = document.getElementById('answer-btns');
-
+var time =200;
 
 
 
 //start the quiz
-startBtn.addEventListener('click', startQuiz);
+
+startBtn.addEventListener('click', function() {
+    startQuiz();
+    startTimer();
+});   
 
 nextBtn.addEventListener('click', ()=>{
     currentQueIndex++;
     nextQuestion();
+    
+    
 })
 function startQuiz(){
 console.log("started");
@@ -23,7 +29,29 @@ currentQueIndex = 0
 questionConEl.classList.remove('hide');
 nextQuestion()
 }
+//quiz timer
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
 
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = duration;
+        }
+    }, 1000);
+}
+
+window.onload = function () {
+    var fiveMinutes = 60 * 5,
+        display = document.querySelector('#time');
+    startTimer(fiveMinutes, display);
+};
 //To set the next question 
 function nextQuestion(){
     resetQue();
@@ -113,5 +141,7 @@ var questions =[
             {text:'j', correct:false},
             {text:'f', correct:true},
         ]
+        
     }
+
 ]
